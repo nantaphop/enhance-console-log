@@ -28,3 +28,10 @@ console.log('This is console.log()')
 console.info('This is console.info()')
 console.warn('This is console.warn()')
 console.error('This is console.error()')
+
+const orderInfoLog = console.infoWithPrefix('order:111111')
+const orderLog = console.logWithPrefix('order:111111')
+
+orderInfoLog('created')
+orderLog('trying to update')
+orderInfoLog('updated')

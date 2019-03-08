@@ -27,4 +27,11 @@ module.exports = function enhanceConsoleLog(config = {}){
             !disabledLevel[level] && originalLog.apply(console, [prefix, ...arguments])
         }
     })
+    enhanceLevel.forEach(level => {
+        console[`${level}WithPrefix`] = function(prefix){   
+            return function(){
+                console[level].apply(console, [`[${prefix}]`, ...arguments])
+            }
+        }
+    })
 }
