@@ -1,7 +1,21 @@
 const enhanceConsoleLog = require('..')
 
+// Default configuration
 enhanceConsoleLog({
-
+    dateFormat: 'YYYY-MM-DD HH:mm:ss.SSS',
+    separator: '\t---',
+    levelColor: {
+        'debug': '#a0a0a0', 
+        'log': '#dbdbdb', 
+        'info': '#55a6e8', 
+        'warn': '#f7b737',
+        'error': '#b21111', 
+    },
+    // disabled some log level
+    disabledLevel: {
+        warn: true,
+        log: process.env.NODE_ENV === 'production'
+    }
 })
 
 console.log('Hello World')

@@ -9,18 +9,22 @@ const DEFAULT_LEVEL_COLOR = {
     'error': '#b21111', 
 }
 
+const DEFAULT_DISABLED_LEVEL = {}
+
 const getDate = config => chalk.blue(moment().format(config.dateFormat || 'YYYY-MM-DD HH:mm:ss.SSS'))
-const getLevel = (config, level) => chalk.hex([DEFAULT_LEVEL_COLOR[level]])(level.toUpperCase())
 const getSeparator = config => config.separator || '\t---'
+const getLevel = (config, level) => config.levelColor 
+                                    ? chalk.hex([config.levelColor[level]])(level.toUpperCase())
+                                    : chalk.hex([DEFAULT_LEVEL_COLOR[level]])(level.toUpperCase())
 
 module.exports = function enhanceConsoleLog(config = {}){
-    
+    const disabledLevel = config.disabledLevel || DEFAULT_DISABLED_LEVEL
     const enhanceLevel = ['info', 'debug', 'error', 'log', 'warn']
     enhanceLevel.forEach(level => {
         const originalLog = console[level]
         console[level] = function(){   
             let prefix = [getDate(config), getLevel(config, level), getSeparator(config)].join(' ')
-            originalLog.apply(console, [prefix, ...arguments])
+            !disabledLevel[level] && originalLog.apply(console, [prefix, ...arguments])
         }
     })
 }
