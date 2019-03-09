@@ -43,7 +43,7 @@ console.info('This is console.info()')
 console.warn('This is console.warn()')
 console.error('This is console.error()')
 ```
-You will get following logs with colors if your terminal supports it.
+You will get the following logs with colors if your terminal supports it.
 ```javascript
 2019-03-09 00:57:48.741 DEBUG   --- This is console.debug()
 2019-03-09 00:57:48.741 LOG     --- This is console.log()
@@ -69,7 +69,7 @@ orderInfoLog('created')
 orderLog('trying to update')
 orderInfoLog('updated')
 ```
-You will get following logs: 
+You will get the following logs: 
 ```javascript
 2019-03-09 00:57:48.742 INFO    --- [order:111111] created
 2019-03-09 00:57:48.742 LOG     --- [order:111111] trying to update
