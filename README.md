@@ -13,7 +13,7 @@ const enhanceConsoleLog = require('enhance-console-log')
 enhanceConsoleLog()
 ```
 
-# Configurationn
+# Configuration
 ```javascript
 // Default configuration
 enhanceConsoleLog({
