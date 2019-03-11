@@ -1,5 +1,5 @@
 # Motivation
-We are lazy! Let make it as easy as possible to config.
+We are lazy! Let's make it as easy as possible to config.
 
 # Installation
 ```
@@ -7,7 +7,7 @@ npm install --save enhance-console-log
 ```
 
 # Setup
-Just import and call on your entry point
+Just import and call on your entry point.
 ```javascript
 const enhanceConsoleLog = require('enhance-console-log')
 enhanceConsoleLog()
@@ -35,7 +35,7 @@ enhanceConsoleLog({
 ```
 
 # Simple Usage
-Just call following console log function, debug, log, info, warn and error
+Just call the following console log functions: debug, log, info, warn and error.
 ```javascript
 console.debug('This is console.debug()')
 console.log('This is console.log()')
@@ -43,7 +43,7 @@ console.info('This is console.info()')
 console.warn('This is console.warn()')
 console.error('This is console.error()')
 ```
-You will get following log with color if your terminal support
+You will get the following logs with colors if your terminal supports it.
 ```javascript
 2019-03-09 00:57:48.741 DEBUG   --- This is console.debug()
 2019-03-09 00:57:48.741 LOG     --- This is console.log()
@@ -52,7 +52,7 @@ You will get following log with color if your terminal support
 2019-03-09 00:57:48.741 ERROR   --- This is console.error()
 ```
 # Helper Logging Function
-We provide some logging helper patch directly to console object
+We provide some logging helper patch directly to the console object.
 ```javascript
 console.debugWithPrefix(prefix: string)
 console.logWithPrefix(prefix: string)
@@ -69,7 +69,7 @@ orderInfoLog('created')
 orderLog('trying to update')
 orderInfoLog('updated')
 ```
-You will get following log
+You will get the following logs: 
 ```javascript
 2019-03-09 00:57:48.742 INFO    --- [order:111111] created
 2019-03-09 00:57:48.742 LOG     --- [order:111111] trying to update
